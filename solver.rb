@@ -1,5 +1,4 @@
 class Solver
-
   def factorial(num)
     if num.negative?
       'Negative number passed'
@@ -12,15 +11,15 @@ class Solver
     word.reverse
   end
 
-  def fizzbuzz(n)
-    if n % 3 == 0 && n % 5 == 0
-      "fizzbuzz"
-    elsif n % 5 == 0
-      "buzz"
-    elsif n % 3 == 0
-      "fizz"
+  def fizzbuzz(int)
+    if (int % 3).zero? && (int % 5).zero?
+      'fizzbuzz'
+    elsif (int % 5).zero?
+      'buzz'
+    elsif (int % 3).zero?
+      'fizz'
     else
-      "No buzz"
+      'No buzz'
     end
   end
 end

@@ -1,51 +1,61 @@
-require_relative '../solver.rb'
+require_relative '../solver'
 
 describe Solver do
   before :each do
     @solver = Solver.new
-end
+  end
 
-  context "factorial test for factorial method" do
-    it "factorial" do
-
+  context 'When passing interger parameters to the factorial method' do
+    it 'Passing in positive integers should return factorial' do
       factor = @solver.factorial(5)
+
       expect(factor).to eql(120)
     end
 
-    it "receive error for negative number" do
-
+    it 'Passing in negative integers should return error message' do
       factor = @solver.factorial(-5)
-      expect(factor).to eql("Negative number passed")
+
+      expect(factor).to eql('Negative number passed')
     end
 
-    it 'factorial of 0 should equal 1' do
-
+    it 'Passing in 0 should return 1' do
       factor = @solver.factorial(0)
+
       expect(factor).to eql(1)
     end
   end
 
-  context "Reverse method test" do
-    it 'reverse string' do
-      factor = @solver.reverse("Name")
-      expect(factor).to eql("emaN")
+  context 'When passing string parameters to the reverse method' do
+    it 'Passing in a string should return the reverse of the string' do
+      factor = @solver.reverse('Name')
+
+      expect(factor).to eql('emaN')
     end
   end
 
-  context 'fizzbuzz method test' do
-    it 'fizz test' do
+  context 'When passing interger parameters to the fizzbuzz method' do
+    it 'Multiples of 3 should return fizz' do
       factor = @solver.fizzbuzz(6)
-      expect(factor).to eql("fizz")
+
+      expect(factor).to eql('fizz')
     end
 
-    it 'buzz test' do
+    it 'Multiples of 5 should return buzz' do
       factor = @solver.fizzbuzz(10)
-      expect(factor).to eql("buzz")
+
+      expect(factor).to eql('buzz')
     end
 
-    it 'fizzbuzz test' do
+    it 'Multiples of 3 & 5 should return fizzbuzz' do
       factor = @solver.fizzbuzz(15)
-      expect(factor).to eql("fizzbuzz")
+
+      expect(factor).to eql('fizzbuzz')
+    end
+
+    it 'Passing in integers that result in remainders should return No buzz' do
+      factor = @solver.fizzbuzz(7)
+
+      expect(factor).to eql('No buzz')
     end
   end
 end
