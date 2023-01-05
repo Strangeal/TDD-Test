@@ -1,3 +1,5 @@
+require_relative '../solver.rb'
+
 describe Solver do
   before :each do
     @solver = Solver.new
@@ -10,10 +12,10 @@ end
       expect(factor).to eql(120)
     end
 
-    it "receive error for ingetive" do
+    it "receive error for negative number" do
 
       factor = @solver.factorial(-5)
-      expect{factor}.to raise_error('NoNegativeIntergerAllowed')
+      expect(factor).to eql("Negative number passed")
     end
 
     it 'factorial of 0 should equal 1' do
