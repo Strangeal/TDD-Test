@@ -30,4 +30,20 @@ end
     end
   end
 
+  context 'fizzbuzz method test' do
+    it 'fizz test' do
+      factor = @solver.fizzbuzz(6)
+      expect(factor).to eql("fizz")
+    end
+
+    it 'buzz test' do
+      factor = @solver.fizzbuzz(10)
+      expect(factor).to eql("buzz")
+    end
+
+    it 'fizzbuzz test' do
+      factor = @solver.fizzbuzz(15)
+      expect(factor).to eql("fizzbuzz")
+    end
+  end
 end
